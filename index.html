@@ -1,9 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mount Builder</title>
-  </head>
-  <body></body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MountBuilder</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/reset.css" />
+</head>
+<body>
+  <header>
+    <h1>MountBuilder</h1>
+    <p>Build and prepare your sermon with Scripture and structure.</p>
+  </header>
+
+  <section id="scripture-search">
+    <label for="reference">Book Chapter:Verse</label>
+    <input type="text" id="reference" placeholder="e.g., John 3:16" />
+    <button id="fetchScripture">Insert Scripture</button>
+    <div id="scripture-result"></div>
+  </section>
+
+  <main>
+    <form id="sermon-form">
+      <label for="title">Title</label>
+      <input type="text" id="title" required />
+
+      <label for="theme">Theme</label>
+      <textarea id="theme"></textarea>
+
+      <label for="points">Main Points</label>
+      <textarea id="points"></textarea>
+
+      <label for="illustrations">Illustrations</label>
+      <textarea id="illustrations"></textarea>
+
+      <label for="conclusion">Conclusion</label>
+      <textarea id="conclusion"></textarea>
+
+      <button type="submit">Save Sermon</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 </html>
