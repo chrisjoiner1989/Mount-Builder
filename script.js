@@ -14,3 +14,19 @@ fetchButton.addEventListener("click", async () => {
 
   scriptureResult.textContent = `Fetching scripture for: ${ref}...`;
 });
+
+// Local Storage
+const sermonForm = document.getElementById("sermon-form");
+sermonForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const sermon = {
+    title: document.getElementById("title").value,
+    theme: document.getElementById("theme").value,
+    points: document.getElementById("points").value,
+    illustrations: document.getElementById("illustrations").value,
+    conclusion: document.getElementById("conclusion").value,
+    date: new Date().toISOString(),
+  };
+  localStorage.setItem("sermonDraft", JSON.stringify(sermon));
+  alert("Sermon saved successfully.");
+});
