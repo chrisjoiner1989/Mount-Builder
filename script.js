@@ -20,4 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  // Initialize other functionality
+  initializeTimer();
+  initializeTemplatePreview();
+  initializeTimeCalculator();
 });
