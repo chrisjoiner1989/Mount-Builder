@@ -15,4 +15,12 @@ const elements = {
   sermonContent: document.getElementById("sermon-content"),
   // Breakdown Elements
   scriptureReferences: document.getElementById("scripture-references"),
+  // Library Elements
+  saveSermonBtn: document.querySelector(".save-sermon-btn"),
+  sermonList: document.getElementById("sermon-list"),
+  // Timer Elements
+  timerDisplay: document.getElementById("timer-display"),
+  startTimerBtn: document.querySelector(".start-timer-btn"),
+  pauseTimerBtn: document.querySelector(".pause-timer-btn"),
+  resetTimerBtn: document.querySelector(".reset-timer-btn"),
 };
