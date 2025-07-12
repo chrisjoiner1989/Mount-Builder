@@ -10,39 +10,197 @@
     <main class="book-container">
       <header class="book-header">
         <h1 class="book-title">Mount Builder</h1>
-        <time class="verse=reference" id="currentDate" datetime=""></time>
       </header>
 
-      <div class="pages" role="main">
-        <article class="page left-page">
-          <form class="page-content" aria-label="sermon details">
-            <section class="field-group">
-              <label class="visually-hidden" for="title">Sermon Title</label>
-              <input
-                type="text"
-                id="title"
-                name="title"
-                class="sermon-title"
-                placeholder="title"
-                aria-label="Sermon Title"
-              />
-            </section>
+      <section class="sermon-creation">
+        <h2>Sermon Creation</h2>
+        <form class="sermon-form">
+          <fieldset class="sermon-form-group">
+            <legend>Sermon Details</legend>
+            <div class="form-field">
+              <label for="sermon-title">Title</label>
+              <input type="text" id="sermon-title" name="sermon-title" required />
+            </div>
+            
+            <div class="form-field">
+              <label for="sermon-content">Sermon Content</label>
+              <textarea id="sermon-content" name="sermon-content" rows="10" placeholder="Enter your sermon here..." required></textarea>
+            </div>
+          </fieldset>
+        </form>
+      </section>
 
-            <section class="field-group">
-              <label for="mainText" class="visually-hidden"
-                >Main Scripture Text</label
-              >
-              <input
-                type="text"
-                id="mainText"
-                class="main-scripture"
-                placeholder="Main Scripture"
-                aria-label="Main Scripture reference"
-              />
-            </section>
+      <section class="scripture-search">
+        <h2>Scripture Search</h2>
+        <div class="search-container">
+          <form class="search-form">
+            <div class="search-input-group">
+              <label for="scripture-search">Search Scriptures</label>
+              <div class="search-controls">
+                <input type="text" id="scripture-search" name="scripture-search" placeholder="Enter scripture reference or keywords..." />
+                <button type="submit" class="search-btn">Search</button>
+              </div>
+            </div>
           </form>
-        </article>
-      </div>
+          <div class="search-results" id="search-results" aria-live="polite">
+            <!-- Search results will be displayed here -->
+          </div>
+        </div>
+      </section>
+
+      <section class="sermon-breakdown">
+        <h2>Sermon Breakdown</h2>
+        <form class="breakdown-form">
+          <fieldset class="breakdown-container">
+            <legend>Sermon Structure</legend>
+            
+            <div class="breakdown-group">
+              <label for="introduction">Introduction</label>
+              <textarea id="introduction" name="introduction" rows="4" placeholder="Opening remarks, hook, or context..."></textarea>
+            </div>
+            
+            <div class="breakdown-group">
+              <label for="main-points">Main Points</label>
+              <textarea id="main-points" name="main-points" rows="6" placeholder="Key points, arguments, or themes..."></textarea>
+            </div>
+            
+            <div class="breakdown-group">
+              <label for="scripture-references">Scripture References</label>
+              <textarea id="scripture-references" name="scripture-references" rows="4" placeholder="Bible verses and passages..."></textarea>
+            </div>
+            
+            <div class="breakdown-group">
+              <label for="application">Application</label>
+              <textarea id="application" name="application" rows="4" placeholder="How to apply this message to daily life..."></textarea>
+            </div>
+            
+            <div class="breakdown-group">
+              <label for="conclusion">Conclusion</label>
+              <textarea id="conclusion" name="conclusion" rows="3" placeholder="Closing thoughts, call to action..."></textarea>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+
+      <section class="sermon-notes">
+        <h2>Sermon Notes</h2>
+        <form class="notes-form">
+          <fieldset class="notes-container">
+            <legend>Delivery Notes</legend>
+            
+            <div class="notes-group">
+              <label for="delivery-notes">Delivery Notes</label>
+              <textarea id="delivery-notes" name="delivery-notes" rows="4" placeholder="Personal notes for delivery, reminders, emphasis points..."></textarea>
+            </div>
+            
+            <div class="notes-group">
+              <label for="timing-notes">Timing Notes</label>
+              <textarea id="timing-notes" name="timing-notes" rows="3" placeholder="Time markers, pacing reminders, section timing..."></textarea>
+            </div>
+            
+            <div class="notes-group">
+              <label for="illustration-notes">Illustration Notes</label>
+              <textarea id="illustration-notes" name="illustration-notes" rows="3" placeholder="Stories, examples, visual aids to mention..."></textarea>
+            </div>
+            
+            <div class="notes-group">
+              <label for="prayer-notes">Prayer Notes</label>
+              <textarea id="prayer-notes" name="prayer-notes" rows="3" placeholder="Prayer requests, intercessory prayer points..."></textarea>
+            </div>
+            
+            <div class="notes-group">
+              <label for="action-notes">Action Items</label>
+              <textarea id="action-notes" name="action-notes" rows="3" placeholder="Call to action, next steps, follow-up items..."></textarea>
+            </div>
+            
+            <div class="notes-group">
+              <label for="personal-reminders">Personal Reminders</label>
+              <textarea id="personal-reminders" name="personal-reminders" rows="2" placeholder="Personal reminders, things to remember during delivery..."></textarea>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+
+      <section class="sermon-library">
+        <h2>Sermon Library</h2>
+        <div class="library-container">
+          <div class="library-controls">
+            <button type="button" class="save-sermon-btn">Save Current Sermon</button>
+            <button type="button" class="new-sermon-btn">New Sermon</button>
+          </div>
+          
+          <div class="sermon-list">
+            <h3>Saved Sermons</h3>
+            <ul class="sermon-items" id="sermon-list">
+              <!-- Saved sermons will be displayed here -->
+            </ul>
+          </div>
+          
+          <div class="sermon-details" id="sermon-details">
+            <h3>Sermon Details</h3>
+            <div class="sermon-meta">
+              <p><strong>Date Created:</strong> <span id="sermon-date">-</span></p>
+              <p><strong>Last Modified:</strong> <span id="sermon-modified">-</span></p>
+              <p><strong>Word Count:</strong> <span id="sermon-word-count">-</span></p>
+            </div>
+            <div class="sermon-actions">
+              <button type="button" class="load-sermon-btn">Load Sermon</button>
+              <button type="button" class="delete-sermon-btn">Delete Sermon</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sermon-templates">
+        <h2>Sermon Templates</h2>
+        <div class="templates-container">
+          <div class="template-selection">
+            <h3>Choose a Template</h3>
+            <div class="template-options">
+              <div class="template-option">
+                <input type="radio" id="expository" name="template-type" value="expository" />
+                <label for="expository">
+                  <h4>Expository</h4>
+                  <p>Verse-by-verse Bible study approach</p>
+                </label>
+              </div>
+              
+              <div class="template-option">
+                <input type="radio" id="topical" name="template-type" value="topical" />
+                <label for="topical">
+                  <h4>Topical</h4>
+                  <p>Theme-based message with multiple scriptures</p>
+                </label>
+              </div>
+              
+              <div class="template-option">
+                <input type="radio" id="narrative" name="template-type" value="narrative" />
+                <label for="narrative">
+                  <h4>Narrative</h4>
+                  <p>Story-driven message with biblical narrative</p>
+                </label>
+              </div>
+              
+              <div class="template-option">
+                <input type="radio" id="custom" name="template-type" value="custom" />
+                <label for="custom">
+                  <h4>Custom</h4>
+                  <p>Create your own sermon structure</p>
+                </label>
+              </div>
+            </div>
+            
+            <button type="button" class="apply-template-btn">Apply Template</button>
+          </div>
+          
+          <div class="template-preview" id="template-preview">
+            <h3>Template Preview</h3>
+            <div class="preview-content">
+              <p>Select a template to see its structure...</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
