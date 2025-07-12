@@ -1,28 +1,5 @@
-// bible api config
-const BIBLE_API_BASE_URL = "https://bible-api.com";
+// Mount Builder - Bible API Integration
+// Uses bible-api.com (no API key required)
 
-// DOM Elements
-const scriptureSearchInput = document.getElementById("scripture-search");
-const searchBtn = document.querySelector(".search-btn");
-const searchResults = document.getElementById("search-results");
-
-// Event Listeners
-document.addEventListener("DOMContentLoaded", function () {
-  // Scripture search functionality
-  if (searchBtn) {
-    searchBtn.addEventListener("click", handleScriptureSearch);
-  }
-
-  if (scriptureSearchInput) {
-    scriptureSearchInput.addEventListener("keypress", function (e) {
-      if (e.key === "Enter") {
-        handleScriptureSearch();
-      }
-    });
-  }
-
-  // Initialize other functionality
-  initializeTimer();
-  initializeTemplatePreview();
-  initializeTimeCalculator();
-});
+// API Configuration
+const API_BASE_URL = "https://bible-api.com/";
