@@ -13,4 +13,6 @@ const elements = {
   // Sermon Form Elements
   sermonTitle: document.getElementById("sermon-title"),
   sermonContent: document.getElementById("sermon-content"),
+  // Breakdown Elements
+  scriptureReferences: document.getElementById("scripture-references"),
 };
