@@ -9,13 +9,103 @@
   <body>
     <div class="app-container">
       <header class="main-header">
+        <h1>Mount Builder</h1>
         <nav>
-          <button id="sermonBtn" class="nav-btn">Sermon</button>
-          <button id="verseBtn" class="nav-btn">Verse</button>
-          <button id="messageBtn" class="nav-btn">Verses</button>
+          <button id="sermonBtn" class="nav-btn active">Sermon</button>
+          <button id="verseBtn" class="nav-btn">Verses</button>
+          <button id="messageBtn" class="nav-btn">Messages</button>
           <button id="exportBtn" class="nav-btn">Export</button>
         </nav>
       </header>
+
+      <main class="main-content">
+        <!-- Sermon Builder Section -->
+        <section id="sermonSection" class="content-section active">
+          <h2>Sermon Builder</h2>
+          <div class="sermon-form">
+            <input
+              type="text"
+              id="sermonTitle"
+              placeholder="Sermon Title"
+              class="input-field"
+            />
+            <input
+              type="text"
+              id="sermonDate"
+              placeholder="Date"
+              class="input-field"
+            />
+            <input
+              type="text"
+              id="sermonScripture"
+              placeholder="Main Scripture"
+              class="input-field"
+            />
+            <textarea
+              id="sermonNotes"
+              placeholder="Write your sermon notes here..."
+              class="sermon-textarea"
+            ></textarea>
+          </div>
+        </section>
+
+        <!-- Verse Search Section -->
+        <section id="verseSection" class="content-section">
+          <h2>Verse Search</h2>
+          <div class="verse-search">
+            <input
+              type="text"
+              id="verseSearch"
+              placeholder="Search verse or topic..."
+              class="input-field"
+            />
+            <button id="searchBtn" class="btn-primary">Search</button>
+          </div>
+          <div id="verseResults" class="verse-results"></div>
+        </section>
+
+        <!-- Messaging Section -->
+        <section id="messageSection" class="content-section">
+          <h2>Congregation Messages</h2>
+          <div class="message-form">
+            <textarea
+              id="messageText"
+              placeholder="Message to congregation..."
+              class="message-textarea"
+            ></textarea>
+            <div class="message-options">
+              <label><input type="checkbox" id="smsOption" /> SMS</label>
+              <label><input type="checkbox" id="emailOption" /> Email</label>
+              <label
+                ><input type="checkbox" id="appOption" /> App
+                Notification</label
+              >
+            </div>
+            <button id="sendMessageBtn" class="btn-primary">
+              Send Message
+            </button>
+          </div>
+        </section>
+
+        <!-- Export Section -->
+        <section id="exportSection" class="content-section">
+          <h2>Export Options</h2>
+          <div class="export-options">
+            <button id="exportPptBtn" class="btn-secondary">
+              Export to PowerPoint
+            </button>
+            <button id="exportPdfBtn" class="btn-secondary">
+              Export to PDF
+            </button>
+            <button id="exportWordBtn" class="btn-secondary">
+              Export to Word
+            </button>
+          </div>
+        </section>
+      </main>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+    <script src="src/app.js"></script>
   </body>
 </html>
