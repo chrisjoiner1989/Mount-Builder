@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mount Builder</title>
+  </head>
+  <body>
+    <main>
+      <h1>Mount Builder</h1>
+      <section id="sermon-form-section">
+        <h2>Prepare Your Sermon</h2>
+        <form id="sermon-form">
+          <label for="title">Sermon Title:</label>
+          <input type="text" id="title" name="title" required />
+
+          <label for="scripture">Scripture Reference (e.g. John 3:16):</label>
+          <input type="text" id="scripture" name="scripture" required />
+
+          <label for="date">Sermon Date:</label>
+          <input type="text" id="date" name="date" required />
+
+          <label for="notes">Sermon Notes:</label>
+          <textarea name="notes" id="notes" rows="6" required></textarea>
+
+          <button type="button" id="fetch-verse">Fetch Verse</button>
+          <button type="submit">Save Sermon</button>
+        </form>
+        <div id="verse-output"></div>
+      </section>
+      <section id="saved-sermons">
+        <h2>Saved Sermons</h2>
+        <ul id="sermon-list"></ul>
+      </section>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
