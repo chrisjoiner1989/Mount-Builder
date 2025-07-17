@@ -13,7 +13,7 @@
     "pastor",
     "presentation"
   ],
-  "author": "Your Name",
+  "author": "Chris Joiner",
   "license": "MIT",
   "dependencies": {
     "pptxgenjs": "^3.12.0"
