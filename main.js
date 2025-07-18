@@ -24,17 +24,54 @@ fetchVerseBtn.addEventListener("click", () => {
 
 // event: save sermon form.
 
-sermonForm.addEventListener("Submit", (e) => {
+function validateSermon(sermon) {
+  const titleRegex = /^[a-zA-Z0-9\s]+$/;
+  const scriptureRegex = /^[1-3]?\s?[A-Za-z]+\s\d+:\d+$/;
+
+  if (!titleRegex.test(sermon.title)) {
+    alert("Sermon title must only contain letters, numbers, and spaces.");
+    return false;
+  }
+
+  if (!scriptureRegex.test(sermon.scripture)) {
+    alert(
+      'Scripture reference must be in format like "John 3:16" or "1 Corinthians 13:4".'
+    );
+    return false;
+  }
+  return true;
+}
+
+sermonForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const sermonData = {
     title: titleInput.value.trim(),
     scripture: scriptureInput.value.trim(),
-    date: dateInput.value.trim(),
+    date: dateInput.value,
     notes: notesInput.value.trim(),
   };
-  console.log("Saving sermon", sermonData);
+
+  if (!validateSermon(sermonData)) {
+    return;
+  }
+
+  saveSermon(sermonData);
+  clearForm();
+  alert("Sermon saved successfully!");
 });
+
+//Local storage
+function saveSermon(sermon) {
+  const sermons = JSON.parse(localStorage.getItem("sermons")) || [];
+  sermons.push(sermon);
+  localStorage.setItem("sermons", JSON.stringify(sermons));
+}
+
+// clear forms field
+function clearForm() {
+  sermonForm.requestFullscreen();
+}
 
 // bible api fetch
 function fetchVerse(reference) {
