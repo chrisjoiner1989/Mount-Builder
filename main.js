@@ -35,3 +35,42 @@ sermonForm.addEventListener("Submit", (e) => {
   };
   console.log("Saving sermon", sermonData);
 });
+
+// bible api fetch
+function fetchVerse(reference) {
+  const apiUrl = `https://bible-api.com/${encodeURIComponent(reference)}`;
+
+  verseOutput.textContent = "Loading verse...";
+  fetch(apiUrl)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Verse not found.");
+      }
+      return res.json();
+    })
+    .then((data) => {
+      if (data.verse) {
+        verseOutput.textContent = data.verse.text;
+      } else if (data.text) {
+        verseOutput.textContent = `"${data.text}"\n— ${data.reference}`;
+      } else {
+        verseOutput.textContent = "Verse not found.";
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      verseOutput.textContent =
+        "Error fetching verse. Please check the reference format.";
+    });
+}
+
+// updated event: fetch bible verse
+fetchVerseBtn.addEventListener("click", () => {
+  const scripture = scriptureInput.value.trim();
+
+  if (!scripture) {
+    alert("Please enter a scripture reference (e.g. John 3:16)");
+  }
+
+  fetchVerse(scripture);
+});
