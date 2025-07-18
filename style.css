@@ -105,3 +105,15 @@ button:hover {
     grid-column: span 2ve;
   }
 }
+
+#sermon-list-section {
+  margin-top: 2rem;
+}
+
+.sermon-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #f0ead6;
+  border-radius: 6px;
+}

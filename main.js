@@ -3,6 +3,7 @@ const sermonForm = document.getElementById("sermon-form");
 const fetchVerseBtn = document.getElementById("fetch-verse");
 const verseOutput = document.getElementById("verse-output");
 const sermonList = document.getElementById("sermon-list");
+window.addEventListener("DOMContentLoaded", displaySermons);
 
 // input fields
 const titleInput = document.getElementById("title");
@@ -58,6 +59,7 @@ sermonForm.addEventListener("submit", (e) => {
 
   saveSermon(sermonData);
   clearForm();
+  displaySermons(); // 👈 Add this
   alert("Sermon saved successfully!");
 });
 
@@ -111,3 +113,24 @@ fetchVerseBtn.addEventListener("click", () => {
 
   fetchVerse(scripture);
 });
+
+function displaySermons() {
+  sermonList.innnerHtml = " ";
+  const sermons = JSON.parse(localStorage.getItem)("sermons");
+
+  if (sermons.length === 0) {
+    sermonList.innerHTML = "<p>No sermons saved yet.";
+    return;
+  }
+  sermons.forEach((sermon, index) => {
+    const sermonDiv = document.createElement("div");
+    sermonDiv.classList.add("sermon-card");
+    sermonDiv.innerHTML = `
+      <h3>${sermon.title}</h3>
+      <p><strong>Scripture:</strong> ${sermon.scripture}</p>
+      <p><strong>Date:</strong> ${sermon.date}</p>
+      <p><strong>Notes:</strong> ${sermon.notes}</p>
+    `;
+    sermonList.appendChild(sermonDiv);
+  });
+}
