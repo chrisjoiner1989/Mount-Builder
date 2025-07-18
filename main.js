@@ -130,7 +130,22 @@ function displaySermons() {
       <p><strong>Scripture:</strong> ${sermon.scripture}</p>
       <p><strong>Date:</strong> ${sermon.date}</p>
       <p><strong>Notes:</strong> ${sermon.notes}</p>
+      <button class="delete-btn" data="index"=${index}">Delete</button>
     `;
     sermonList.appendChild(sermonDiv);
   });
+
+  document.querySelectorAll(".delete-btn").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const index = e.target.getAttribute("data-index");
+      deleteSermon(index);
+    });
+  });
+}
+
+function deleteSermon(index) {
+  const sermons = JSON.parse(localStorage.getItem("sermons")) || [];
+  sermons.splice(index, 1);
+  localStorage.setITem("sermons", JSON.stringify(sermons));
+  displaySermons();
 }
