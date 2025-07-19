@@ -3,14 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mount Builder || Sermon Builder app</title>
+    <title>Mount Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css" />
-    x
   </head>
   <body>
-    <header class="head-content">
-      <img src="./assets/logo.png" alt="Mount Builder Logo" class="logo" />
-    </header>
-    <main class="main-content"></main>
+    <main>
+      <img src="./assets/logo.png" alt="Mount Builder logo" class="logo" />
+      <section id="sermon-form-section" class="md-surface">
+        <h2 class="md-typescale-title-large">Prepare Your Sermon</h2>
+        <form id="sermon-form">
+          <label for="title">Sermon Title:</label>
+          <input type="text" id="title" name="title" required />
+
+          <label for="scripture">Scripture Reference (e.g. John 3:16):</label>
+          <input type="text" id="scripture" name="scripture" required />
+
+          <label for="date">Sermon Date:</label>
+          <input type="date" id="date" name="date" required />
+
+          <label for="notes">Sermon Notes:</label>
+          <textarea name="notes" id="notes" rows="6" required></textarea>
+        </form>
+
+        <!-- Floating Toolbar -->
+        <div class="floating-toolbar">
+          <button type="button" id="fetch-verse" class="btn-secondary">
+            Fetch Verse
+          </button>
+          <button type="submit" form="sermon-form" class="btn-primary">
+            Save Sermon
+          </button>
+        </div>
+        <section id="sermon-list-section" class="md-surface">
+          <h2 class="md-typescale-title-large">Saved Sermons</h2>
+          <div id="sermon-list"></div>
+        </section>
+        <div id="verse-output"></div>
+      </section>
+    </main>
+    <script src="../main.js"></script>
   </body>
 </html>

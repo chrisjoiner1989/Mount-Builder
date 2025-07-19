@@ -1,0 +1,676 @@
+/* Material Design 3 Color Tokens - Communion Theme */
+:root {
+  /* Primary Colors - Wine Red (Blood of Christ) */
+  --md-sys-color-primary: #722F37;
+  --md-sys-color-on-primary: #FFFFFF;
+  --md-sys-color-primary-container: #FFDAD6;
+  --md-sys-color-on-primary-container: #2C0009;
+  
+  /* Secondary Colors - Warm Bread Tones */
+  --md-sys-color-secondary: #A0845C;
+  --md-sys-color-on-secondary: #FFFFFF;
+  --md-sys-color-secondary-container: #F4E4BC;
+  --md-sys-color-on-secondary-container: #2F1F00;
+  
+  /* Tertiary Colors - Golden Wheat */
+  --md-sys-color-tertiary: #B8860B;
+  --md-sys-color-on-tertiary: #FFFFFF;
+  --md-sys-color-tertiary-container: #FFF2CC;
+  --md-sys-color-on-tertiary-container: #3E2A00;
+  
+  /* Error Colors */
+  --md-sys-color-error: #BA1A1A;
+  --md-sys-color-on-error: #FFFFFF;
+  --md-sys-color-error-container: #FFDAD6;
+  --md-sys-color-on-error-container: #410002;
+  
+  /* Surface Colors - Warm Bread & Parchment */
+  --md-sys-color-surface: #FDF8F0;
+  --md-sys-color-on-surface: #1F1B16;
+  --md-sys-color-surface-variant: #F0E4D7;
+  --md-sys-color-on-surface-variant: #4F4539;
+  --md-sys-color-outline: #817567;
+  --md-sys-color-outline-variant: #D3C4B3;
+  
+  /* Background - Warm Parchment */
+  --md-sys-color-background: #FDF8F0;
+  --md-sys-color-on-background: #1F1B16;
+  
+  /* Material Design 3 Elevation */
+  --md-sys-elevation-level0: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);
+  --md-sys-elevation-level1: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --md-sys-elevation-level2: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  --md-sys-elevation-level3: 0px 1px 3px 0px rgba(0, 0, 0, 0.3), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+  --md-sys-elevation-level4: 0px 2px 3px 0px rgba(0, 0, 0, 0.3), 0px 6px 10px 4px rgba(0, 0, 0, 0.15);
+  --md-sys-elevation-level5: 0px 4px 4px 0px rgba(0, 0, 0, 0.3), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+  line-height: 1.5;
+  padding: 24px;
+  padding-bottom: 100px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.logo {
+  display: block;
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Material Design 3 Typography Scale */
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 57px;
+  font-weight: 400;
+  line-height: 64px;
+  letter-spacing: -0.25px;
+  color: var(--md-sys-color-on-background);
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0px;
+  color: var(--md-sys-color-on-background);
+  margin: 24px 0 16px 0;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 44px;
+  letter-spacing: 0px;
+  color: var(--md-sys-color-on-background);
+}
+
+h4 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0px;
+  color: var(--md-sys-color-on-background);
+}
+
+h5 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 0px;
+  color: var(--md-sys-color-on-background);
+}
+
+h6 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: var(--md-sys-color-on-background);
+}
+
+.md-typescale-title-large {
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0px;
+}
+
+.md-typescale-title-medium {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}
+
+.md-typescale-title-small {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+
+.md-typescale-body-large {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+
+.md-typescale-body-medium {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+}
+
+.md-typescale-body-small {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+}
+
+.md-typescale-label-large {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+
+.md-typescale-label-medium {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+}
+
+.md-typescale-label-small {
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+}
+
+#sermon-form-section {
+  background: var(--md-sys-color-surface);
+  padding: 24px;
+  padding-bottom: 120px; /* Extra space for floating toolbar */
+  border-radius: 12px;
+  box-shadow: var(--md-sys-elevation-level2);
+  margin-bottom: 120px; /* Ensure spacing from toolbar */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Material Design 3 Outlined Text Fields */
+.md-outlined-text-field {
+  position: relative;
+  margin: 16px 0;
+}
+
+.md-outlined-text-field input,
+.md-outlined-text-field textarea {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  background-color: transparent;
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: 4px;
+  color: var(--md-sys-color-on-surface);
+  transition: all 0.2s ease;
+}
+
+.md-outlined-text-field input:focus,
+.md-outlined-text-field textarea:focus {
+  outline: none;
+  border-color: var(--md-sys-color-primary);
+  border-width: 2px;
+  padding: 15px; /* Adjust for thicker border */
+}
+
+.md-outlined-text-field input:hover,
+.md-outlined-text-field textarea:hover {
+  border-color: var(--md-sys-color-on-surface);
+}
+
+.md-outlined-text-field label {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--md-sys-color-on-surface-variant);
+  background-color: var(--md-sys-color-surface);
+  padding: 0 4px;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  transform-origin: left top;
+}
+
+.md-outlined-text-field input:focus + label,
+.md-outlined-text-field textarea:focus + label,
+.md-outlined-text-field input:not(:placeholder-shown) + label,
+.md-outlined-text-field textarea:not(:placeholder-shown) + label {
+  top: -8px;
+  left: 12px;
+  font-size: 12px;
+  color: var(--md-sys-color-primary);
+}
+
+.md-outlined-text-field input::placeholder,
+.md-outlined-text-field textarea::placeholder {
+  color: transparent;
+}
+
+.md-outlined-text-field input:focus::placeholder,
+.md-outlined-text-field textarea:focus::placeholder {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* Legacy input styles for backward compatibility */
+label {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--md-sys-color-on-surface-variant);
+  margin-bottom: 8px;
+  display: block;
+}
+
+input,
+textarea {
+  padding: 16px;
+  font-size: 16px;
+  background-color: transparent;
+  color: var(--md-sys-color-on-surface);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-family: 'Roboto', sans-serif;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--md-sys-color-primary);
+  border-width: 2px;
+}
+
+input:hover,
+textarea:hover {
+  border-color: var(--md-sys-color-on-surface);
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* Material Design 3 Button System */
+button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  line-height: 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 64px;
+  height: 40px;
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* Material Design 3 Filled Button (Primary) */
+.btn-primary {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  box-shadow: var(--md-sys-elevation-level0);
+}
+
+.btn-primary:hover {
+  background-color: var(--md-sys-color-primary);
+  box-shadow: var(--md-sys-elevation-level1);
+}
+
+.btn-primary:active {
+  box-shadow: var(--md-sys-elevation-level0);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--md-sys-color-on-primary);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.btn-primary:hover::before {
+  opacity: 0.08;
+}
+
+.btn-primary:focus::before {
+  opacity: 0.12;
+}
+
+.btn-primary:active::before {
+  opacity: 0.12;
+}
+
+/* Material Design 3 Outlined Button (Secondary) */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--md-sys-color-primary);
+  border: 1px solid var(--md-sys-color-outline);
+}
+
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--md-sys-color-primary);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.btn-secondary:hover::before {
+  opacity: 0.08;
+}
+
+.btn-secondary:focus::before {
+  opacity: 0.12;
+}
+
+.btn-secondary:active::before {
+  opacity: 0.12;
+}
+
+/* Material Design 3 Error Button */
+.btn-danger {
+  background-color: var(--md-sys-color-error);
+  color: var(--md-sys-color-on-error);
+  box-shadow: var(--md-sys-elevation-level0);
+}
+
+.btn-danger:hover {
+  background-color: var(--md-sys-color-error);
+  box-shadow: var(--md-sys-elevation-level1);
+}
+
+.btn-danger:active {
+  box-shadow: var(--md-sys-elevation-level0);
+}
+
+.btn-danger::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--md-sys-color-on-error);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.btn-danger:hover::before {
+  opacity: 0.08;
+}
+
+.btn-danger:focus::before {
+  opacity: 0.12;
+}
+
+.btn-danger:active::before {
+  opacity: 0.12;
+}
+
+/* Ripple effect for all buttons */
+button {
+  position: relative;
+  overflow: hidden;
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+button:active::after {
+  width: 300px;
+  height: 300px;
+}
+#verse-output {
+  margin-top: 16px;
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  padding: 16px;
+  border-radius: 12px;
+  font-style: italic;
+  box-shadow: var(--md-sys-elevation-level1);
+}
+
+#saved-sermons {
+  background-color: var(--md-sys-color-surface);
+  padding: 24px;
+  padding-bottom: 40px; /* Extra padding for last items */
+  border-radius: 12px;
+  box-shadow: var(--md-sys-elevation-level2);
+}
+
+#sermon-list {
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  form {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    gap: 1rem;
+  }
+
+  form textarea,
+  form button {
+    grid-column: span 2;
+  }
+}
+
+#sermon-list-section {
+  margin-top: 2rem;
+}
+
+.sermon-card {
+  border: 1px solid var(--md-sys-color-outline-variant);
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: var(--md-sys-color-surface-variant);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  box-shadow: var(--md-sys-elevation-level1);
+}
+
+.sermon-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--md-sys-elevation-level3);
+  border-color: var(--md-sys-color-primary);
+}
+
+.sermon-card h3 {
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.sermon-card p {
+  color: var(--md-sys-color-on-surface-variant);
+  margin-bottom: 8px;
+}
+
+.loading-state {
+  opacity: 0.6;
+  pointer-events: none;
+  position: relative;
+}
+
+.loading-state::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid #722f37;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeleton-card {
+  border: 1px solid #e0e0e0;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+}
+
+.skeleton-title {
+  height: 24px;
+  width: 70%;
+  margin-bottom: 12px;
+}
+
+.skeleton-text {
+  height: 16px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.skeleton-text:last-child {
+  width: 60%;
+}
+
+/* Material Design 3 Floating Toolbar */
+.floating-toolbar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--md-sys-color-surface);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: 28px;
+  padding: 16px 24px;
+  display: flex;
+  gap: 16px;
+  box-shadow: var(--md-sys-elevation-level3);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.floating-toolbar:hover {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: var(--md-sys-elevation-level4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .floating-toolbar {
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    transform: none;
+    flex-direction: column;
+  }
+  
+  .floating-toolbar:hover {
+    transform: translateY(-4px);
+  }
+  
+  #sermon-form-section {
+    padding-bottom: 140px; /* More space on mobile for stacked buttons */
+    margin-bottom: 140px;
+  }
+  
+  body {
+    padding-bottom: 120px; /* Adjust body padding for mobile */
+  }
+}
+
+/* Material Design 3 Surface Component */
+.md-surface {
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  border-radius: 12px;
+  box-shadow: var(--md-sys-elevation-level1);
+}
+
