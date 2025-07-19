@@ -102,7 +102,7 @@ button:hover {
 
   form textarea,
   form button {
-    grid-column: span 2ve;
+    grid-column: span 2;
   }
 }
 

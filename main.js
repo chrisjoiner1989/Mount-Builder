@@ -13,14 +13,14 @@ const notesInput = document.getElementById("notes");
 
 // event: fetch bible verse
 fetchVerseBtn.addEventListener("click", () => {
-  const scripture = scriptureInput.ariaValueMax.trim();
+  const scripture = scriptureInput.value.trim();
 
   if (!scripture) {
     alert("Please enter a scripture reference (e.g. John 3:16)");
     return;
   }
 
-  console.log("fetching verse for:", scripture);
+  fetchVerse(scripture);
 });
 
 // event: save sermon form.
@@ -72,7 +72,7 @@ function saveSermon(sermon) {
 
 // clear forms field
 function clearForm() {
-  sermonForm.requestFullscreen();
+  sermonForm.reset();
 }
 
 // bible api fetch
@@ -103,22 +103,12 @@ function fetchVerse(reference) {
     });
 }
 
-// updated event: fetch bible verse
-fetchVerseBtn.addEventListener("click", () => {
-  const scripture = scriptureInput.value.trim();
-
-  if (!scripture) {
-    alert("Please enter a scripture reference (e.g. John 3:16)");
-  }
-
-  fetchVerse(scripture);
-});
 
 function displaySermons() {
-  sermonList.innnerHtml = " ";
-  const sermons = JSON.parse(localStorage.getItem)("sermons");
+  sermonList.innerHTML = "";
+  const sermons = JSON.parse(localStorage.getItem("sermons")) || [];
 
-  if (sermons.length === 0) {
+  if (!sermons || sermons.length === 0) {
     sermonList.innerHTML = "<p>No sermons saved yet.";
     return;
   }
@@ -130,7 +120,7 @@ function displaySermons() {
       <p><strong>Scripture:</strong> ${sermon.scripture}</p>
       <p><strong>Date:</strong> ${sermon.date}</p>
       <p><strong>Notes:</strong> ${sermon.notes}</p>
-      <button class="delete-btn" data="index"=${index}">Delete</button>
+      <button class="delete-btn" data-index="${index}">Delete</button>
     `;
     sermonList.appendChild(sermonDiv);
   });
@@ -146,6 +136,6 @@ function displaySermons() {
 function deleteSermon(index) {
   const sermons = JSON.parse(localStorage.getItem("sermons")) || [];
   sermons.splice(index, 1);
-  localStorage.setITem("sermons", JSON.stringify(sermons));
+  localStorage.setItem("sermons", JSON.stringify(sermons));
   displaySermons();
 }
